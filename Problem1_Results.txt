@@ -1,0 +1,92 @@
+================================================================================
+        PROBLEM 1: WEIGHTED APPROXIMATE COMMON SUBSTRING
+                    EXPERIMENTAL RESULTS
+================================================================================
+
+Author: Dynamic Programming Assignment
+Date: Sat Nov 22 10:31:33 EST 2025
+
+================================================================================
+USER INPUT TEST CASE
+================================================================================
+String 1: ABCAABCAA
+String 2: ABBCAACCBBBBBB
+String 1 Length: 9
+String 2 Length: 14
+
+--------------------------------------------------------------------------------
+SCENARIO 1: UNIFORM WEIGHTS (w = 1.0, penalty δ = 10)
+--------------------------------------------------------------------------------
+Description: All characters have equal weight of 1.0
+             Mismatch penalty δ = 10 (as per requirements)
+
+Best Match: 'BCAA' (pos 1) <-> 'BCAA' (pos 2) | Len: 4, Mismatches: 0, Score: 4.00
+Execution time: 0.465 ms
+
+================================================================================
+SCENARIO 2: FREQUENCY-BASED WEIGHTS
+================================================================================
+Description: Weights are based on English letter frequency
+             Common letters (E, T, A) get higher weights
+             Rare letters (Z, Q, X) get lower weights
+             Weight range normalized to [1, 10]
+             Penalty δ varies from min weight to max weight
+
+Weight Range: [1.000, 10.000]
+
+Testing with 10 intermediate penalty values (as required):
+(Penalty δ ranges from minimum weight to maximum weight)
+
+--------------------------------------------------------------------------------
+Penalty δ    | Result                                                       | Time (ms) 
+--------------------------------------------------------------------------------
+1.000        | 'AABCAA' (pos 3) <-> 'ABBCAA' (pos 0) | Len: 6, Mismatches: 1, Score: 24.24 | 0.046     
+1.900        | 'AABCAA' (pos 3) <-> 'ABBCAA' (pos 0) | Len: 6, Mismatches: 1, Score: 23.34 | 0.040     
+2.800        | 'AABCAA' (pos 3) <-> 'ABBCAA' (pos 0) | Len: 6, Mismatches: 1, Score: 22.44 | 0.044     
+3.700        | 'AABCAA' (pos 3) <-> 'ABBCAA' (pos 0) | Len: 6, Mismatches: 1, Score: 21.54 | 0.043     
+4.600        | 'AABCAA' (pos 3) <-> 'ABBCAA' (pos 0) | Len: 6, Mismatches: 1, Score: 20.64 | 0.044     
+5.500        | 'AABCAA' (pos 3) <-> 'ABBCAA' (pos 0) | Len: 6, Mismatches: 1, Score: 19.74 | 0.044     
+6.400        | 'AABCAA' (pos 3) <-> 'ABBCAA' (pos 0) | Len: 6, Mismatches: 1, Score: 18.84 | 0.045     
+7.300        | 'BCAA' (pos 1) <-> 'BCAA' (pos 2) | Len: 4, Mismatches: 0, Score: 18.48 | 0.044     
+8.200        | 'BCAA' (pos 1) <-> 'BCAA' (pos 2) | Len: 4, Mismatches: 0, Score: 18.48 | 0.044     
+9.100        | 'BCAA' (pos 1) <-> 'BCAA' (pos 2) | Len: 4, Mismatches: 0, Score: 18.48 | 0.084     
+10.000       | 'BCAA' (pos 1) <-> 'BCAA' (pos 2) | Len: 4, Mismatches: 0, Score: 18.48 | 0.044     
+--------------------------------------------------------------------------------
+
+================================================================================
+PERFORMANCE ANALYSIS (SYNTHETIC DATA)
+================================================================================
+Testing with increasingly larger string lengths:
+(Randomly generated strings with uniform distribution of A-Z)
+
+--------------------------------------------------------------------------------
+String Lengths  | Time (ms)    | Memory (KB) 
+--------------------------------------------------------------------------------
+    50 x 50     |         0.80 |          450
+   100 x 100    |         8.98 |          178
+   200 x 200    |        11.42 |          703
+   500 x 500    |       158.68 |         4045
+  1000 x 1000   |      1440.89 |        15805
+--------------------------------------------------------------------------------
+
+Observations:
+  - Time grows as O(n^3) due to three nested loops
+  - Space grows as O(n^2) for the DP table
+  - Algorithm remains efficient for strings up to 1000 characters
+
+================================================================================
+ALGORITHM COMPLEXITY SUMMARY
+================================================================================
+Time Complexity: O(n * m * min(n,m))
+  where n = length of first string, m = length of second string
+
+Space Complexity: O(n * m)
+  Two 2D arrays used (optimized from 3D)
+
+DP Recurrence Relation:
+  dp[i][j][k] = dp[i-1][j-1][k-1] + score(s1[i], s2[j])
+  where score(a,b) = w[a] if match, else -δ
+
+================================================================================
+END OF REPORT
+================================================================================
