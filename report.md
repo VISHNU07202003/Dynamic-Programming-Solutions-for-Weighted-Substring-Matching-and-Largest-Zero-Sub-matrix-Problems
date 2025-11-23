@@ -1,3 +1,17 @@
+<!-- PROJECT SHIELDS -->
+![Java](https://img.shields.io/badge/Java-JDK%208%2B-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![License](https://img.shields.io/github/license/VISHNU07202003/Dynamic-Programming-Solutions-for-Weighted-Substring-Matching-and-Largest-Zero-Sub-matrix-Problems?style=for-the-badge)
+![Issues](https://img.shields.io/github/issues/VISHNU07202003/Dynamic-Programming-Solutions-for-Weighted-Substring-Matching-and-Largest-Zero-Sub-matrix-Problems?style=for-the-badge)
+![Stars](https://img.shields.io/github/stars/VISHNU07202003/Dynamic-Programming-Solutions-for-Weighted-Substring-Matching-and-Largest-Zero-Sub-matrix-Problems?style=for-the-badge&social)
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/VISHNU07202003/Dynamic-Programming-Solutions-for-Weighted-Substring-Matching-and-Largest-Zero-Sub-matrix-Problems">
+    <!-- You can replace this with a custom logo if you have one -->
+    <img src="https://user-images.githubusercontent.com/13601893/201481358-b0e6437c-f236-40ad-b6aa-5f25a27899a2.png" alt="Logo" width="100" height="100">
+  </a>
+
   <h3 align="center">Dynamic Programming Optimization Algorithms</h3>
 
   <p align="center">
@@ -174,27 +188,31 @@ Both programs are command-line driven and include options for manual input or ru
 
 ## Performance Analysis
 
-Empirical results validate the theoretical time and space complexities. Tests were conducted on an Intel Core i7 CPU.
+Empirical results from synthetic data benchmarks validate the theoretical time and space complexities of both algorithms.
 
-### Problem 1: Weighted Approximate Common Substring
+### Problem 1: Weighted Approximate Common Substring Analysis
 
-<p align="center">
-  <img src="https://i.imgur.com/n6tYn4T.png" alt="WACS Time Complexity" width="49%">
-  <img src="https://i.imgur.com/5J3Xb3w.png" alt="WACS Space Complexity" width="49%">
-</p>
-<div align="center">
-<i><b>Fig 1 & 2:</b> Time complexity demonstrates the expected O(n³) growth, while space complexity scales quadratically (O(n²)) due to optimization.</i>
-</div>
+#### Time Complexity: `O(n³)`
 
-### Problem 2: Largest Zero Sub-matrix
 
-<p align="center">
-  <img src="https://i.imgur.com/K8J4V9C.png" alt="LZSM Time Complexity" width="49%">
-  <img src="https://i.imgur.com/4hJ1bF4.png" alt="LZSM Space Complexity" width="49%">
-</p>
-<div align="center">
-<i><b>Fig 3 & 4:</b> Both execution time and memory usage scale linearly with the number of cells (m*n), confirming the O(m*n) complexity. The algorithm is exceptionally fast, processing a million-cell matrix in under 7ms.</i>
-</div>
+> The execution time demonstrates clear cubic growth as the string length `n` increases. The measured data points closely follow the theoretical `O(n³)` trendline, confirming the complexity of the three nested loops (length, string 1, string 2).
+
+#### Space Complexity: `O(n²)`
+
+
+> Memory usage scales quadratically with the string length. This matches the `O(n²)` complexity of using two `n x n` DP tables, which is a significant optimization from a naive `O(n³)` space approach.
+
+### Problem 2: Largest Zero Sub-matrix Analysis
+
+#### Time Complexity: `O(m*n)`
+
+
+> The execution time grows linearly with the total number of cells in the matrix (`m x n`). The algorithm is exceptionally fast, processing a million-cell matrix in under 7ms. This confirms the single-pass `O(m*n)` efficiency.
+
+#### Space Complexity: `O(m*n)`
+
+
+> Memory usage also scales linearly with the matrix size. The initial memory spike for small matrices is due to JVM overhead, but the trend quickly aligns with the `O(m*n)` complexity of storing the DP table.
 
 ---
 
