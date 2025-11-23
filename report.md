@@ -1,17 +1,3 @@
-<!-- PROJECT SHIELDS -->
-![Java](https://img.shields.io/badge/Java-JDK%208%2B-ED8B00?style=for-the-badge&logo=java&logoColor=white)
-![License](https://img.shields.io/github/license/VISHNU07202003/Dynamic-Programming-Solutions-for-Weighted-Substring-Matching-and-Largest-Zero-Sub-matrix-Problems?style=for-the-badge)
-![Issues](https://img.shields.io/github/issues/VISHNU07202003/Dynamic-Programming-Solutions-for-Weighted-Substring-Matching-and-Largest-Zero-Sub-matrix-Problems?style=for-the-badge)
-![Stars](https://img.shields.io/github/stars/VISHNU07202003/Dynamic-Programming-Solutions-for-Weighted-Substring-Matching-and-Largest-Zero-Sub-matrix-Problems?style=for-the-badge&social)
-
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/VISHNU07202003/Dynamic-Programming-Solutions-for-Weighted-Substring-Matching-and-Largest-Zero-Sub-matrix-Problems">
-    <!-- You can replace this with a custom logo if you have one -->
-    <img src="https://user-images.githubusercontent.com/13601893/201481358-b0e6437c-f236-40ad-b6aa-5f25a27899a2.png" alt="Logo" width="100" height="100">
-  </a>
-
   <h3 align="center">Dynamic Programming Optimization Algorithms</h3>
 
   <p align="center">
